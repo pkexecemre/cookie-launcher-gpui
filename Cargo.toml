@@ -1,5 +1,6 @@
 [workspace]
-members = ["xtask"]
+# xtask yalnızca yerel bir yardımcı; depoda izlenmiyor.
+exclude = ["xtask"]
 
 [package]
 name = "cookie-launcher-gpui"

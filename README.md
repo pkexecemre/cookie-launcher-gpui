@@ -187,8 +187,10 @@ Her biri gerçek uzak servislerle çalışır, çıktısı yukarıdaki test turu
 ## Geliştirme yardımcıları
 
 ```bash
-cargo run -p xtask -- capture cikti.png      # pencereyi öne getirmeden yakalar
-cargo run -p xtask -- tab modrinth cikti.png # sekmeyi seçip yakalar
+# Ekran görüntüsü yakalama (yerel yardımcı, depoda izlenmiyor):
+#   cd xtask && cargo build --release
+#   ./target/release/xtask capture cikti.png       # pencereyi öne getirmeden
+#   ./target/release/xtask tab modrinth cikti.png  # sekmeyi seçip yakalar
 cargo run -- --versions-probe       # 922 sürümü doğrular
 cargo run -- --loader-probe 1.21.4 fabric
 cargo run -- --launch-probe 1.21.4  # gerçek Minecraft başlatır

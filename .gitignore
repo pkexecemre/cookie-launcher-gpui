@@ -4,3 +4,5 @@
 .idea/
 .vscode/
 dist/
+# Yerel geliştirme aracı (ekran görüntüsü yakalama); depoya ait değil.
+/xtask/
