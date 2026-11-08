@@ -121,7 +121,10 @@ fn window_id() -> Option<String> {
     const SCRIPT: &str = r#"const wins = workspace.windowList();
 for (let i = 0; i < wins.length; i++) {
   const w = wins[i];
-  if (w.resourceClass === "cookie-launcher-gpui" || (w.caption && w.caption.indexOf("CookieLauncher") === 0)) {
+  const cls = w.resourceClass || "";
+  const cap = w.caption || "";
+  // Installed builds report "cookie-launcher"; dev builds "cookie-launcher-gpui".
+  if (cls.indexOf("cookie-launcher") === 0 || cap.indexOf("Cookie ") === 0 || cap.indexOf("CookieLauncher") === 0) {
     print("CLID " + w.internalId);
     break;
   }
